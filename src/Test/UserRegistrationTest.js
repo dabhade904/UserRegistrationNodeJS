@@ -152,6 +152,18 @@ describe('User Registration Test for Password validity', function () {
         assert.equal(validator.checkPassword("Password@1234"), true);
     });
 
+    it('hould return true when user Password valid..', function () {
+        assert.equal(validator.checkPassword("123Password@"),true);
+    });
+
+    it('hould return true when user Password valid..', function () {
+        assert.equal(validator.checkPassword("Password123@"),true);
+    });
+
+    it('hould return true when user Password valid.', function () {
+        assert.equal(validator.checkPassword("1234A78@"),true);
+    });
+    
     it('should return false when user Password without capital letter.', function () {
         assert.equal(validator.checkPassword("password@1234"), false);
     });

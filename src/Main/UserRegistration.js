@@ -6,18 +6,18 @@ module.exports = {
     },
 
     checkvalidEmail(email) {
-        let pat = RegExp('^[a-zA-Z0-9]([._+-]{0,1}[a-zA-Z0-9])*[@]{1}[a-zA-Z0-9]{1,}[.]{1}[a-zA-Z]{2,3}([.]{1}[a-zA-Z]{2,3}){0,1}$');
-        return pat.test(email);
+        let pattern = RegExp('^[a-zA-Z0-9]([._+-]{0,1}[a-zA-Z0-9])*[@]{1}[a-zA-Z0-9]{1,}[.]{1}[a-zA-Z]{2,3}([.]{1}[a-zA-Z]{2,3}){0,1}$');
+        return pattern.test(email);
     },
 
     checkMobNumber(mobileNumber) {
-        let pat = RegExp('^[0-9]{2}\\s[0-9]{10}$');
-        return pat.test(mobileNumber);
+        let pattern = RegExp('^[0-9]{2}\\s[0-9]{10}$');
+        return pattern.test(mobileNumber);
     },
 
     checkPassword(password) {
-        let pat = RegExp('((?=.*[0-9])(?=.*[a-z]?)(?=.*[A-Z])(?=.*[@#*$%]).{8,})');
-        return pat.test(password);
+        let pattern = RegExp('((?=.*[0-9])(?=.*[a-z]?)(?=.*[A-Z])(?=.*[@#*$%]).{8,})');
+        return pattern.test(password);
     }
 }
 
