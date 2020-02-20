@@ -1,6 +1,6 @@
 module.exports = {
 
-    firstAndLastName(name) {
+    cheeckFirstAndLastName(name) {
         var pattern = RegExp('^[A-Z]{1}[a-z]{3,}$');
         return pattern.test(name);
     },
@@ -20,4 +20,3 @@ module.exports = {
         return pattern.test(password);
     }
 }
-
