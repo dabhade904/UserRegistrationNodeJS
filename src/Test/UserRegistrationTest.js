@@ -105,9 +105,11 @@ describe('User Registration Test for email validity', function () {
     it('should return true when user email valid.', function () {
         assert.equal(validator.checkvalidEmail("abc@yahoo.com"), true);
     });
+
     it('should return true when user email valid.', function () {
         assert.equal(validator.checkvalidEmail("abc-100@yahoo.com"), true);
     });
+
     it('should return true when user email valid.', function () {
         assert.equal(validator.checkvalidEmail("abc.100@abc.com.au"), true);
     });
@@ -171,8 +173,23 @@ describe('User Registration Test for email validity', function () {
         assert.equal(validator.checkvalidEmail("abc@gmail.com.aa.au"), false);
     });
 
-    it('should return false when user email Invalid.', function () {
+    it('should return false when user email in Numbers.', function () {
         assert.equal(validator.checkvalidEmail("123453435"), false);
+    });
+    it('should return false when user email Null.', function () {
+        assert.equal(validator.checkvalidEmail(null), false);
+    });
+
+    it('should return false when user email Empty.', function () {
+        assert.equal(validator.checkvalidEmail(" "),false);
+    });
+
+    it('should return false when passing Undefined.', function () {
+        assert.equal(validator.checkvalidEmail(),false);
+    });
+
+    it('should return false when passing NAN.', function () {
+        assert.equal(validator.checkvalidEmail(NaN),false);
     });
 });
 
@@ -204,6 +221,29 @@ describe('User Registration Test for Password validity', function () {
     it('should return false when user Password without any number.', function () {
         assert.equal(validator.checkPassword("Password@"), false);
     });
+
+    it('should return false when passing string.', function () {
+        assert.equal(validator.checkvalidEmail("dabhade"), false);
+    });
+
+    it('should return false when passing Numbers.', function () {
+        assert.equal(validator.checkvalidEmail("123453435"), false);
+    });
+    it('should return false when passing Null.', function () {
+        assert.equal(validator.checkvalidEmail(null), false);
+    });
+
+    it('should return false when passing Empty.', function () {
+        assert.equal(validator.checkvalidEmail(" "),false);
+    });
+
+    it('should return false when passing Undefined.', function () {
+        assert.equal(validator.checkvalidEmail(),false);
+    });
+
+    it('should return false when passing NAN.', function () {
+        assert.equal(validator.checkvalidEmail(NaN),false);
+    });
 });
 
 describe('User Registration Test for mobile number validity', function () {
@@ -219,6 +259,18 @@ describe('User Registration Test for mobile number validity', function () {
         assert.equal(validator.checkMobNumber("91 987654321"), false);
     });
 
+    it('should return false when user mobile number start with string.', function () {
+        assert.equal(validator.checkMobNumber("dsac1322"),false);
+    });
+
+    it('should return false when user mobile number end with string.', function () {
+        assert.equal(validator.checkMobNumber("9585dsac"),false);
+    });
+
+    it('should return false when passing Numbers.', function () {
+        assert.equal(validator.checkvalidEmail("123453435"), false);
+    });
+
     it('should return false when user mobile number null.', function () {
         assert.equal(validator.checkMobNumber(""), false);
     });
@@ -227,12 +279,16 @@ describe('User Registration Test for mobile number validity', function () {
         assert.equal(validator.checkMobNumber("dsac"),false);
     });
 
-    it('should return false when user mobile number start with string.', function () {
-        assert.equal(validator.checkMobNumber("dsac1322"),false);
+    it('should return false when passing Null.', function () {
+        assert.equal(validator.checkvalidEmail(null), false);
     });
 
-    it('should return false when user mobile number end with string.', function () {
-        assert.equal(validator.checkMobNumber("9585dsac"),false);
+    it('should return false when passing Undefined.', function () {
+        assert.equal(validator.checkvalidEmail(),false);
+    });
+
+    it('should return false when passing NAN.', function () {
+        assert.equal(validator.checkvalidEmail(NaN),false);
     });
 });
 
